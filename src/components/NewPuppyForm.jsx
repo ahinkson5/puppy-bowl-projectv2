@@ -23,10 +23,12 @@ return (
                 value={name}
                 type="text" 
                 placeholder= "name"
-                onchange ={(e) = =>{
+                onChange ={(e) => {
                     setName (e.target.value);
                     }
                 }/>
+            <label> Email:</label>
+            <input type="text" />
         </form>
     </div>
 )

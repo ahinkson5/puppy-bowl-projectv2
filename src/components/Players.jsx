@@ -2,15 +2,15 @@ import { fetchPuppies } from "../ajaxHelpers/puppies";
 import { useState, useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-function Dogs(){
+function Players(){
     const navigate= useNavigate();
 }
-const [dogs, setDogs] = useState([])
+const [players, setPlayers] = useState([])
 
 useEffect(() =>{
     async function getPupppies() {
         const puppies = await fetchPuppies();
-        setDogs(puppies);
+        setPlayers(puppies);
     }
     getPupppies();
 }, []);
@@ -20,8 +20,10 @@ return(
         {
             players.map((player) =>{
                 return(
-                    <div>
-                        {/* what I want to display */}
+                    <div key= {player.id}>
+                        <h4>{player.name}</h4>
+                        <label>{player.id}</label>
+                        <img src={player.imageURL} />
                         <button onClick ={()=>{
                             Navigate(`/players/${player.id}`);
                         }}>See Details </button>
@@ -34,4 +36,4 @@ return(
     </div>
 )
 
-export default Dogs; 
+export default Players; 
