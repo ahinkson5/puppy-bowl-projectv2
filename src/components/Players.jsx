@@ -4,13 +4,13 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 function Players(){
     const navigate= useNavigate();
-}
+
 const [players, setPlayers] = useState([])
 
 useEffect(() =>{
     async function getPupppies() {
-        const puppies = await fetchPuppies();
-        setPlayers(puppies);
+        const {data} = await fetchPuppies();
+        setPlayers(data.players);
     }
     getPupppies();
 }, []);
@@ -23,7 +23,7 @@ return(
                     <div key= {player.id}>
                         <h4>{player.name}</h4>
                         <label>{player.id}</label>
-                        <img src={player.imageURL} />
+                        <img src={player.imageUrl} />
                         <button onClick ={()=>{
                             Navigate(`/players/${player.id}`);
                         }}>See Details </button>
@@ -35,5 +35,5 @@ return(
         }
     </div>
 )
-
+    }
 export default Players; 

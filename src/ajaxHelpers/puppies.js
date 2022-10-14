@@ -1,6 +1,6 @@
 // fetch puppies
 export const fetchPuppies= async ()=> {
-    const repsonse = await fetch (
+    const response = await fetch (
         'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players'
     );
     const result = await response.json();
