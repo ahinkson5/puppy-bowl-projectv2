@@ -7,14 +7,14 @@ export default function NewPuppyForm(){
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-
+    const [breed, setBreed] = useState('');
 return (
     <div className = "container">
         <form
             // className= "not sure "
             onSubmit={async (event)=> {
             event.preventDefault();
-            const result = await createPuppy(name,email);
+            const result = await createPuppy(name,email,breed);
             navigate("/");
         }}>
             <h4>New Puppy Form</h4>
@@ -28,7 +28,24 @@ return (
                     }
                 }/>
             <label> Email:</label>
-            <input type="text" />
+            <input
+                value= {email} 
+                type="text" 
+                placeholder="email"
+                onChange ={(e)=> {
+                    setEmail (e.target.value);
+                    }
+                } />
+            <label>Breed:</label>
+            <input 
+                value={breed}
+                type="text" 
+                placeholder= "breed"
+                onChange = {(e) => {
+                    setBreed (e.target.value);
+                }
+                }/>
+                <button type="submit"> Submit</button>
         </form>
     </div>
 )

@@ -1,9 +1,9 @@
 import { fetchPuppies } from "../ajaxHelpers/puppies";
 import { useState, useEffect } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { navigate, useNavigate } from "react-router-dom";
 
 function Players(){
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
 const [players, setPlayers] = useState([])
 
@@ -22,10 +22,11 @@ return(
                 return(
                     <div key= {player.id}>
                         <h4>{player.name}</h4>
+                        <h5>{player.breed}</h5>
                         <label>{player.id}</label>
                         <img src={player.imageUrl} />
                         <button onClick ={()=>{
-                            Navigate(`/players/${player.id}`);
+                            navigate(`/players/${player.id}`);
                         }}>See Details </button>
                         
                     </div>

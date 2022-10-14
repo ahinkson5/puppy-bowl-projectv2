@@ -2,6 +2,7 @@ import Players from "./components/Players";
 import NewPuppyForm from "./components/NewPuppyForm";
 import {Routes, Route} from "react-router-dom";
 import NavBar from "./components/NavBar";
+import SingleDog from "./components/SingleDog";
 
 
 
@@ -12,7 +13,7 @@ const App =()=>{
         <Routes>
             <Route path = "/" element= {<Players/>}/>
             <Route path = "/newPuppyForm" element = {<NewPuppyForm/>}/>
-            {/* <Route path = "/players/:id" element = {<SingleDog/>}/> */}
+            <Route path = "/players/:id" element = {<SingleDog/>}/>
         </Routes>
     </div>
     );
