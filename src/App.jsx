@@ -13,7 +13,7 @@ const App =()=>{
         <Routes>
             <Route path = "/" element= {<Players/>}/>
             <Route path = "/newPuppyForm" element = {<NewPuppyForm/>}/>
-            <Route path = "/players/:id" element = {<SingleDog/>}/>
+            <Route path = "/Players/:playerId" element = {<SingleDog/>}/>
         </Routes>
     </div>
     );

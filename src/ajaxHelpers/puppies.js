@@ -1,7 +1,7 @@
 // fetch puppies
 export const fetchPuppies= async ()=> {
     const response = await fetch (
-        'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players'
+        'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players',
     );
     const result = await response.json();
     return result;
@@ -10,14 +10,14 @@ export const fetchPuppies= async ()=> {
 // fetch puppy by id
 export const fetchPuppyById = async (id) => {
     const repsonse = await fetch(
-        'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players/${id}' 
+        `https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players/${id}`, 
     );
     const result = await repsonse.json();
     return result
 };
 
 // create puppy
-export const createPuppy = async (name, email) => {
+export const createPuppy = async (name, breed) => {
     const response = await fetch( 
         'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players',
         {
@@ -25,7 +25,7 @@ export const createPuppy = async (name, email) => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({
                 name, 
-                email,
+                breed,
             }),
         }
         );
@@ -37,7 +37,7 @@ export const createPuppy = async (name, email) => {
 
 export const deletePuppyById = async (id) => {
     const response = await fetch(
-        'https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players/${id}',
+        `https://fsa-puppy-bowl.herokuapp.com/api/2209-FTB-PT-WEB-FT/players/${id}`,
         {
             method: "Delete",
             headers:{

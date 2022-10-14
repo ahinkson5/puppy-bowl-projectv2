@@ -1,0 +1,19 @@
+.nav{
+    background-color: rgb(118, 80, 58);
+    color: antiquewhite;
+    display: flex;
+    justify-content:space-around;
+    padding:20px;
+    
+    
+
+    
+}
+.link{
+    color: antiquewhite;
+    padding-left: 15px;
+    font-size: 25px;
+    text-decoration: none;
+    font-family: fantasy;
+  
+}
